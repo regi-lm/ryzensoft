@@ -64,7 +64,7 @@ test("responsive menu presents every header link as a labeled navigation card an
   ]);
   assert.equal((menu.match(/class="site-nav__icon"/g) ?? []).length, 7);
   assert.equal((menu.match(/class="site-nav__arrow"/g) ?? []).length, 7);
-  assert.match(menu, /<div class="site-nav__footer">\s*<p>© 2026 <span class="brand-word"><span class="brand-initial">R<\/span>Software<\/span>\. Todos os direitos reservados\.<\/p>\s*<\/div>/);
+  assert.match(menu, /<div class="site-nav__footer">\s*<p>© 2026 <span class="brand-word"><span class="brand-initial">R<\/span>yzen<span class="brand-accent">S<\/span>oft<\/span>\. Todos os direitos reservados\.<\/p>\s*<\/div>/);
   assert.match(responsiveCss, /@media \(max-width: 980px\)[\s\S]*?\.site-nav__card\s*\{[^}]*display:\s*grid;[^}]*grid-template-columns:\s*auto minmax\(0, 1fr\) auto;[^}]*border:\s*1px solid var\(--line\);/s);
 });
 

@@ -16,19 +16,20 @@ export function getFooterWordmarkOrder(word) {
   };
 }
 
-export function renderFooterWordmark(container, word = "RSoftware") {
+export function renderFooterWordmark(container, word = "RyzenSoft") {
   if (!container) return;
 
-  container.innerHTML = Array.from(word, (letter, index) =>
-    `<span class="footer-wordmark__letter" data-footer-letter style="--letter-index:${index}" aria-hidden="true">${escapeHtml(letter)}</span>`
-  ).join("");
+  container.innerHTML = Array.from(word, (letter, index) => {
+    const accentClass = index === 0 || letter === "S" ? " footer-wordmark__letter--accent" : "";
+    return `<span class="footer-wordmark__letter${accentClass}" data-footer-letter style="--letter-index:${index}" aria-hidden="true">${escapeHtml(letter)}</span>`;
+  }).join("");
 }
 
 export function initFooterWordmark(gsap, profile = "full") {
   const container = document.querySelector("[data-footer-wordmark]");
   if (!container) return () => {};
 
-  const word = container.dataset.word || "RSoftware";
+  const word = container.dataset.word || "RyzenSoft";
   renderFooterWordmark(container, word);
   if (!gsap || profile === "static") return () => {};
 
@@ -41,7 +42,6 @@ export function initFooterWordmark(gsap, profile = "full") {
     yPercent: -145,
     autoAlpha: 0,
     rotationX: -70,
-    color: "#f5f7fa",
     textShadow: "none",
     filter: "blur(8px)"
   };

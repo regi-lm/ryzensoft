@@ -13,19 +13,21 @@ test("footer wordmark renders one animatable element per letter", async () => {
   const { renderFooterWordmark } = await importFooterModule();
   const container = { innerHTML: "" };
 
-  renderFooterWordmark(container, "RSoftware");
+  renderFooterWordmark(container, "RyzenSoft");
 
   assert.equal((container.innerHTML.match(/data-footer-letter/g) ?? []).length, 9);
+  assert.equal((container.innerHTML.match(/footer-wordmark__letter--accent/g) ?? []).length, 2);
   assert.match(container.innerHTML, />R<\/span>/);
+  assert.match(container.innerHTML, />S<\/span>/);
   assert.match(container.innerHTML, />e<\/span>/);
-  assert.doesNotMatch(container.innerHTML, />RSoftware</);
+  assert.doesNotMatch(container.innerHTML, />RyzenSoft</);
   assert.doesNotMatch(container.innerHTML, /<\/span>\s+<span/);
 });
 
 test("footer wordmark exits right-to-left and accents R last", async () => {
   const { getFooterWordmarkOrder } = await importFooterModule();
 
-  assert.deepEqual(getFooterWordmarkOrder("RSoftware"), {
+  assert.deepEqual(getFooterWordmarkOrder("RyzenSoft"), {
     entrance: [0, 1, 2, 3, 4, 5, 6, 7, 8],
     exit: [8, 7, 6, 5, 4, 3, 2, 1, 0],
     accentIndex: 0
@@ -36,8 +38,8 @@ test("static mode still renders the complete footer wordmark", async () => {
   const { initFooterWordmark } = await importFooterModule();
   const originalDocument = globalThis.document;
   const container = {
-    dataset: { word: "RSoftware" },
-    innerHTML: "RSoftware",
+    dataset: { word: "RyzenSoft" },
+    innerHTML: "RyzenSoft",
     querySelectorAll: () => []
   };
   globalThis.document = { querySelector: () => container };
@@ -76,8 +78,8 @@ test("footer animation starts immediately without waiting for scroll", async () 
     }
   };
   const container = {
-    dataset: { word: "RSoftware" },
-    innerHTML: "RSoftware",
+    dataset: { word: "RyzenSoft" },
+    innerHTML: "RyzenSoft",
     querySelectorAll: () => letters
   };
   globalThis.document = { querySelector: () => container };

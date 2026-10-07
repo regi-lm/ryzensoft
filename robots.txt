@@ -1,4 +1,9 @@
 User-agent: *
 Allow: /
+Disallow: /tests/
+Disallow: /.agents/
+Disallow: /.codex/
+Disallow: /.git/
+Disallow: /README.md
 
 Sitemap: https://rsoftware-site.regi-lima.chatgpt.site/sitemap.xml

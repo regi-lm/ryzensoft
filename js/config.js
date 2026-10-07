@@ -1,8 +1,8 @@
 export const CONFIG = {
-  siteName: "RSoftware",
+  siteName: "RyzenSoft",
   canonicalUrl: "https://rsoftware-site.regi-lima.chatgpt.site/",
   whatsappNumber: "+5591984536649",
-  whatsappMessage: "Olá! Vim pelo site da RSoftware e gostaria de ter um forte posicionamento online.",
+  whatsappMessage: "Olá! Vim pelo site da RyzenSoft e gostaria de ter um forte posicionamento online.",
   formEndpoint: "",
   socialLinks: []
 };

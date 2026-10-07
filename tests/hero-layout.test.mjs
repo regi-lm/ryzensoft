@@ -19,7 +19,7 @@ test("hero removes the eyebrow and video and places technologies after the CTAs"
   assert.match(hero, /<div class="cta-row"[\s\S]*?<\/div>\s*<div class="hero__technologies"/);
 });
 
-test("preloader keeps the RSoftware wordmark without displaying the logo", async () => {
+test("preloader keeps the RyzenSoft wordmark without displaying the logo", async () => {
   const html = await readFile(projectFile("index.html"), "utf8");
   const css = await readFile(projectFile("css/preloader.css"), "utf8");
   const preloader = html.match(/<div class="preloader"[\s\S]*?<header class="site-header"/)?.[0] ?? "";

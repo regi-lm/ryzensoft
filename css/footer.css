@@ -27,6 +27,27 @@
   transform-origin: center top;
   will-change: transform, opacity, filter;
 }
+.footer-wordmark__letter--accent {
+  color: var(--blue);
+}
 .site-footer p { margin-top: .8rem; font-size: .95rem; }
-.site-footer nav { display: flex; flex-wrap: wrap; gap: 1rem; color: var(--muted); }
+.site-footer__navigation {
+  display: grid;
+  justify-items: end;
+  align-content: start;
+  gap: .85rem;
+}
+.site-footer__nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 1rem;
+  color: var(--muted);
+}
+.site-footer__nav--legal {
+  width: 100%;
+  padding-top: .85rem;
+  border-top: 1px solid var(--line);
+  font-size: .86rem;
+}
 .site-footer > p { grid-column: 1 / -1; color: #76818c; text-align: center; }

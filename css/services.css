@@ -16,7 +16,7 @@
   top: calc(var(--header-h) + 22px);
   min-height: min(80svh, 780px);
   display: grid;
-  grid-template-columns: .28fr 1fr;
+  grid-template-columns: 1fr;
   align-items: end;
   gap: clamp(1rem, 4vw, 3rem);
   padding: clamp(1.3rem, 4vw, 3rem);
@@ -56,15 +56,6 @@
 .service-card:nth-child(even) { border-color: rgba(76,201,255,.38); }
 .service-card:nth-child(2) .service-card__overlay {
   background: linear-gradient(112deg, rgba(3,16,22,.97) 8%, rgba(13,91,123,.72) 56%, rgba(76,201,255,.2)), linear-gradient(0deg, rgba(3,16,22,.82), transparent 64%);
-}
-
-.service-card span {
-  color: var(--blue);
-  align-self: start;
-  font-size: clamp(4rem, 12vw, 11rem);
-  font-weight: 900;
-  line-height: .82;
-  opacity: .7;
 }
 
 .service-card h3 { max-width: 900px; font-size: clamp(2.7rem, 6.5vw, 7rem); letter-spacing: -.055em; }

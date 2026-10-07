@@ -7,6 +7,8 @@ const technologyIcons = Object.freeze({
   React: Object.freeze({ name: "React", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" }),
   "Node.js": Object.freeze({ name: "Node.js", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" }),
   Supabase: Object.freeze({ name: "Supabase", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg" }),
+  Bootstrap: Object.freeze({ name: "Bootstrap", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" }),
+  "Bibliotecas JS": Object.freeze({ name: "Bibliotecas JavaScript", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" }),
   GSAP: Object.freeze({ name: "GSAP", src: "https://cdn.simpleicons.org/greensock/88CE02" })
 });
 
