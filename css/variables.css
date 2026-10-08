@@ -11,8 +11,8 @@
   --blue-soft: rgba(76, 201, 255, 0.18);
   --danger: #ff7a7a;
   --radius: 8px;
-  --container: min(1180px, calc(100vw - 40px));
-  --container-wide: min(1480px, calc(100vw - 40px));
+  --container: min(1180px, calc(100% - 40px));
+  --container-wide: min(1480px, calc(100% - 40px));
   --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);

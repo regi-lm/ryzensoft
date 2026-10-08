@@ -29,6 +29,19 @@ test("every legal page exposes the same ordered legal navigation", async () => {
   }
 });
 
+test("legal pages do not render the skip-to-content control", async () => {
+  const pages = await Promise.all([
+    readProjectFile("termos.html"),
+    readProjectFile("lgpd.html"),
+    readProjectFile("politica-de-privacidade.html")
+  ]);
+
+  pages.forEach((page) => {
+    assert.doesNotMatch(page, /class="skip-link"/);
+    assert.doesNotMatch(page, />Pular para o conteúdo</);
+  });
+});
+
 test("terms and privacy pages publish their updated content", async () => {
   const [terms, privacy] = await Promise.all([
     readProjectFile("termos.html"),

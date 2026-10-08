@@ -113,6 +113,30 @@ test("responsive projects use the same horizontal snap flow without the vertical
   assert.doesNotMatch(animations, /if \(innerWidth > 980\) initPanelStack/);
 });
 
+test("responsive content stays inside the viewport without document-level horizontal overflow", async () => {
+  const [variables, reset, globals, hero, css, matrix] = await Promise.all([
+    readProjectFile("css/variables.css"),
+    readProjectFile("css/reset.css"),
+    readProjectFile("css/globals.css"),
+    readProjectFile("css/hero.css"),
+    readProjectFile("css/responsive.css"),
+    readProjectFile("css/matrix-background.css")
+  ]);
+
+  assert.doesNotMatch(variables, /100vw/);
+  assert.match(reset, /html\s*\{[^}]*max-width:\s*100%;[^}]*overflow-x:\s*hidden;/s);
+  assert.match(reset, /body\s*\{[^}]*max-width:\s*100%;[^}]*overflow-x:\s*hidden;/s);
+  assert.match(globals, /\.section-shell\s*\{[^}]*max-width:\s*100%;[^}]*min-width:\s*0;/s);
+  assert.match(hero, /\.hero\s*\{[^}]*grid-template-columns:\s*minmax\(0, 1fr\);/s);
+  assert.match(hero, /\.hero__copy\s*\{[^}]*max-width:\s*100%;[^}]*min-width:\s*0;/s);
+  assert.match(css, /--container:\s*min\(calc\(100% - 28px\), 760px\);/);
+  assert.match(css, /--container-wide:\s*min\(calc\(100% - 28px\), 900px\);/);
+  assert.match(css, /\[data-hero-title\]\s*\{[^}]*width:\s*100%;[^}]*max-width:\s*100%;/s);
+  assert.match(css, /\.skill-item\s*\{[^}]*flex:\s*0 0 100%;[^}]*min-width:\s*0;[^}]*max-width:\s*100%;/s);
+  assert.match(css, /\.project-panel\s*\{[^}]*flex:\s*0 0 100%;[^}]*min-width:\s*0;[^}]*max-width:\s*100%;/s);
+  assert.match(matrix, /#matrix-background\s*\{[^}]*width:\s*100%;[^}]*height:\s*100%;/s);
+});
+
 test("skills and projects expose responsive arrow controls while keeping swipe navigation", async () => {
   const [html, css, skillsSource, main] = await Promise.all([
     readProjectFile("index.html"),
