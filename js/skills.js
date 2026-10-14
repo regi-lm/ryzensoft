@@ -4,8 +4,6 @@ export const skills = [
     iconSlug: "html5",
     accent: "#e34f26",
     ink: "#fffaf2",
-    watermarkGlyph: "5",
-    watermarkVariant: "html",
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
     copy: "Estrutura semântica e acessível para construir experiências sólidas desde a base.",
     use: "Base de páginas rápidas, SEO e acessibilidade."
@@ -15,8 +13,6 @@ export const skills = [
     iconSlug: "css",
     accent: "#1572b6",
     ink: "#fffaf2",
-    watermarkGlyph: "3",
-    watermarkVariant: "css",
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
     copy: "Responsividade, identidade visual e sistemas de interface que funcionam em qualquer tela.",
     use: "Design systems, layouts fluidos e microinterações."
@@ -26,8 +22,6 @@ export const skills = [
     iconSlug: "javascript",
     accent: "#f7df1e",
     ink: "#17191b",
-    watermarkGlyph: "JS",
-    watermarkVariant: "javascript",
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
     copy: "Interações, comportamento e experiências dinâmicas diretamente no navegador.",
     use: "Fluxos interativos, validação e integrações."
@@ -97,17 +91,10 @@ export function renderSkills(container, list = skills) {
   const skillItems = list.map((skill, index) => {
     const ink = skill.ink ?? "#101820";
     const watermarkFilter = ink === "#fffaf2" ? "brightness(0) invert(1)" : "brightness(0)";
-    const watermarkVariant = skill.watermarkVariant ? ` skill-item__mark--${skill.watermarkVariant}` : "";
-    const watermarkGlyph = skill.watermarkGlyph
-      ? `<span class="skill-item__mark-glyph" aria-hidden="true">${skill.watermarkGlyph}</span>`
-      : "";
 
     return `
     <article class="skill-item" data-skill-item data-cursor="skill" style="--skill-accent:${skill.accent};--skill-ink:${ink};--skill-mark-filter:${watermarkFilter};--i:${index}">
-      <div class="skill-item__mark${watermarkVariant}" aria-hidden="true">
-        <img src="${skill.logo}" alt="" width="180" height="180" loading="lazy">
-        ${watermarkGlyph}
-      </div>
+      <img class="skill-item__mark" src="${skill.logo}" alt="" width="180" height="180" loading="lazy">
       <div class="skill-item__content" data-skill-motion>
         <img class="skill-item__logo" src="${skill.logo}" alt="" width="48" height="48" loading="lazy">
         <div>

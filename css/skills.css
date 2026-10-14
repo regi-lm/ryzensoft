@@ -69,44 +69,13 @@
   width: 190px;
   height: 190px;
   opacity: .16;
-  transition: opacity .35s var(--ease);
-}
-.skill-item__mark img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
   filter: grayscale(1) brightness(.3) contrast(1.55);
-  transition: filter .35s var(--ease);
+  transition: opacity .35s var(--ease), filter .35s var(--ease);
 }
 .skill-item:hover .skill-item__mark {
   opacity: .24;
-}
-.skill-item:hover .skill-item__mark img {
   filter: grayscale(1) var(--skill-mark-filter, brightness(0));
 }
-.skill-item__mark-glyph {
-  position: absolute;
-  z-index: 1;
-  color: var(--surface);
-  font-family: "Arial Black", "Helvetica Neue", Arial, sans-serif;
-  font-weight: 900;
-  line-height: 1;
-  letter-spacing: -.08em;
-  transition: color .35s var(--ease);
-}
-.skill-item__mark--html .skill-item__mark-glyph,
-.skill-item__mark--css .skill-item__mark-glyph {
-  left: 50%;
-  top: 55%;
-  transform: translate(-50%, -50%) skewX(-2deg);
-  font-size: 3.65rem;
-}
-.skill-item__mark--javascript .skill-item__mark-glyph {
-  right: 1.25rem;
-  bottom: 1.2rem;
-  font-size: 2.7rem;
-}
-.skill-item:hover .skill-item__mark-glyph { color: var(--skill-accent); }
 .skill-item h3 { font-size: clamp(1.8rem, 3vw, 3.2rem); letter-spacing: -.05em; }
 .skill-item p { margin-top: 1rem; font-size: .98rem; }
 .skill-item span { display: inline-block; margin-top: 1rem; color: var(--blue); font-size: .9rem; }

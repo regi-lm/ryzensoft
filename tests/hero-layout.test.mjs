@@ -74,22 +74,6 @@ test("skill watermarks adapt their hover contrast to light and dark card colors"
   assert.match(container.innerHTML, /--skill-mark-filter:brightness\(0\)/);
 });
 
-test("HTML, CSS, and JavaScript watermarks expose card-colored inner glyphs", async () => {
-  const { renderSkills } = await importSkillsModule();
-  const container = { innerHTML: "" };
-  const technologies = [
-    { name: "HTML", accent: "#e34f26", ink: "#fffaf2", watermarkGlyph: "5", watermarkVariant: "html", logo: "html.svg", copy: "Markup", use: "Sites" },
-    { name: "CSS", accent: "#1572b6", ink: "#fffaf2", watermarkGlyph: "3", watermarkVariant: "css", logo: "css.svg", copy: "Styles", use: "Sites" },
-    { name: "JavaScript", accent: "#f7df1e", ink: "#17191b", watermarkGlyph: "JS", watermarkVariant: "javascript", logo: "javascript.svg", copy: "Logic", use: "Apps" }
-  ];
-
-  renderSkills(container, technologies);
-
-  assert.match(container.innerHTML, /skill-item__mark--html[\s\S]*skill-item__mark-glyph[^>]*>5</);
-  assert.match(container.innerHTML, /skill-item__mark--css[\s\S]*skill-item__mark-glyph[^>]*>3</);
-  assert.match(container.innerHTML, /skill-item__mark--javascript[\s\S]*skill-item__mark-glyph[^>]*>JS</);
-});
-
 test("skill cards isolate animated content from the grid item", async () => {
   const { renderSkills } = await importSkillsModule();
   const container = { innerHTML: "" };
