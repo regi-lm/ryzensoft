@@ -82,6 +82,28 @@ export function advanceColumn(column, {
 }
 
 const MATRIX_COLORS = Object.freeze(["#1B1D1F", "#25282B", "#303438", "#40454A", "#555B60"]);
+export const MATRIX_GLYPH_INTERVAL_SECONDS = 2;
+
+const fractionalPart = (value) => value - Math.floor(value);
+
+export function getMatrixGlyphDelay({ columnIndex, rowIndex, glyphOffset = 0 }) {
+  const phase = fractionalPart(
+    rowIndex * .61803398875
+    + columnIndex * .41421356237
+    + glyphOffset * .27182818284
+  );
+  return phase * MATRIX_GLYPH_INTERVAL_SECONDS;
+}
+
+export function getMatrixGlyph({ columnIndex, rowIndex, elapsedSeconds = 0, glyphOffset = 0 }) {
+  const delay = getMatrixGlyphDelay({ columnIndex, rowIndex, glyphOffset });
+  const elapsedAfterDelay = Math.max(0, elapsedSeconds - delay);
+  const toggles = elapsedSeconds < delay
+    ? 0
+    : 1 + Math.floor(elapsedAfterDelay / MATRIX_GLYPH_INTERVAL_SECONDS);
+  const initialValue = (glyphOffset + rowIndex + columnIndex) % 2;
+  return (initialValue + toggles) % 2 ? "1" : "0";
+}
 
 export function drawMatrixFrame(ctx, state) {
   ctx.clearRect(0, 0, state.width, state.height);
@@ -101,7 +123,12 @@ export function drawMatrixFrame(ctx, state) {
       const brightHead = trailIndex === 0 && columnIndex % 3 === 0;
       ctx.globalAlpha = Math.min(alpha * (brightHead ? 1.45 : 1), .82);
       ctx.fillStyle = brightHead ? "#111315" : MATRIX_COLORS[(columnIndex + trailIndex) % MATRIX_COLORS.length];
-      ctx.fillText((column.glyphOffset + trailIndex + state.frameIndex) % 2 ? "1" : "0", column.x, column.y - trailIndex * column.fontSize);
+      ctx.fillText(getMatrixGlyph({
+        columnIndex,
+        rowIndex: trailIndex,
+        elapsedSeconds: state.elapsedSeconds ?? 0,
+        glyphOffset: column.glyphOffset
+      }), column.x, column.y - trailIndex * column.fontSize);
     }
   });
 
@@ -134,7 +161,7 @@ export function initMatrixBackground(options = {}) {
   let currentSpeed = 1;
   let targetBrightness = 1;
   let currentBrightness = 1;
-  let frameIndex = 0;
+  let elapsedSeconds = 0;
   let pointerListenerActive = false;
   const pointer = { active: false, x: 0, y: 0 };
 
@@ -158,7 +185,7 @@ export function initMatrixBackground(options = {}) {
     height: win.innerHeight,
     dpr: settings.dpr,
     columns,
-    frameIndex,
+    elapsedSeconds,
     brightnessMultiplier: currentBrightness,
     pointer
   });
@@ -186,7 +213,7 @@ export function initMatrixBackground(options = {}) {
       pointerMultiplier: getPointerInfluence(column, pointer),
       random
     }));
-    frameIndex += 1;
+    elapsedSeconds += deltaSeconds;
     render();
     frameId = requestFrame(tick);
   };

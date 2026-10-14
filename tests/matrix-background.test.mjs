@@ -184,6 +184,36 @@ test("renderer draws a bright head followed by a fading binary trail", async () 
   assert.ok(calls.some(([name, color]) => name === "fillStyle" && color === "#111315"));
 });
 
+test("binary glyphs toggle every two seconds with independent row and column delays", async () => {
+  const {
+    MATRIX_GLYPH_INTERVAL_SECONDS,
+    getMatrixGlyph,
+    getMatrixGlyphDelay
+  } = await importMatrixModule();
+  const source = { columnIndex: 3, rowIndex: 4, glyphOffset: 7 };
+  const delay = getMatrixGlyphDelay(source);
+  const rowDelay = getMatrixGlyphDelay({ ...source, rowIndex: 5 });
+  const columnDelay = getMatrixGlyphDelay({ ...source, columnIndex: 4 });
+  const initial = getMatrixGlyph({ ...source, elapsedSeconds: Math.max(0, delay - .01) });
+  const firstToggle = getMatrixGlyph({ ...source, elapsedSeconds: delay + .01 });
+  const beforeSecondToggle = getMatrixGlyph({
+    ...source,
+    elapsedSeconds: delay + MATRIX_GLYPH_INTERVAL_SECONDS - .01
+  });
+  const secondToggle = getMatrixGlyph({
+    ...source,
+    elapsedSeconds: delay + MATRIX_GLYPH_INTERVAL_SECONDS + .01
+  });
+
+  assert.equal(MATRIX_GLYPH_INTERVAL_SECONDS, 2);
+  assert.ok(delay >= 0 && delay < MATRIX_GLYPH_INTERVAL_SECONDS);
+  assert.notEqual(delay, rowDelay);
+  assert.notEqual(delay, columnDelay);
+  assert.notEqual(firstToggle, initial);
+  assert.equal(beforeSecondToggle, firstToggle);
+  assert.equal(secondToggle, initial);
+});
+
 test("animated mode owns one loop and cleanup removes every listener", async () => {
   const { initMatrixBackground } = await importMatrixModule();
   const env = createEnvironment();
