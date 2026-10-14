@@ -90,10 +90,9 @@ export function renderSkills(container, list = skills) {
 
   const skillItems = list.map((skill, index) => {
     const ink = skill.ink ?? "#101820";
-    const watermarkFilter = ink === "#fffaf2" ? "brightness(0) invert(1)" : "brightness(0)";
 
     return `
-    <article class="skill-item" data-skill-item data-cursor="skill" style="--skill-accent:${skill.accent};--skill-ink:${ink};--skill-mark-filter:${watermarkFilter};--i:${index}">
+    <article class="skill-item" data-skill-item data-cursor="skill" style="--skill-accent:${skill.accent};--skill-ink:${ink};--i:${index}">
       <img class="skill-item__mark" src="${skill.logo}" alt="" width="180" height="180" loading="lazy">
       <div class="skill-item__content" data-skill-motion>
         <img class="skill-item__logo" src="${skill.logo}" alt="" width="48" height="48" loading="lazy">
