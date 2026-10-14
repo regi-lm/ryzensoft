@@ -52,10 +52,6 @@
   object-fit: contain;
   filter: drop-shadow(0 0 14px rgba(76, 201, 255, 0.2));
 }
-.site-header .brand img,
-.legal-header .brand img {
-  filter: brightness(0) saturate(100%) invert(15%) sepia(18%) saturate(809%) hue-rotate(165deg) brightness(91%) contrast(94%);
-}
 .brand-initial,
 .brand-accent {
   color: var(--blue);
