@@ -72,7 +72,10 @@
   filter: grayscale(1) brightness(.3) contrast(1.55);
   transition: opacity .35s var(--ease), filter .35s var(--ease);
 }
-.skill-item:hover .skill-item__mark { opacity: .18; filter: grayscale(1) brightness(0) invert(1); }
+.skill-item:hover .skill-item__mark {
+  opacity: .24;
+  filter: grayscale(1) var(--skill-mark-filter, brightness(0));
+}
 .skill-item h3 { font-size: clamp(1.8rem, 3vw, 3.2rem); letter-spacing: -.05em; }
 .skill-item p { margin-top: 1rem; font-size: .98rem; }
 .skill-item span { display: inline-block; margin-top: 1rem; color: var(--blue); font-size: .9rem; }

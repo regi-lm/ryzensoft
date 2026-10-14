@@ -56,8 +56,22 @@ test("skill cards expose each technology accent color to the visual layer", asyn
 
   renderSkills(container, technologies);
 
-  assert.match(container.innerHTML, /style="--skill-accent:#e34f26;--skill-ink:#101820;--i:0"/);
-  assert.match(container.innerHTML, /style="--skill-accent:#61dafb;--skill-ink:#101820;--i:1"/);
+  assert.match(container.innerHTML, /style="--skill-accent:#e34f26;--skill-ink:#101820;--skill-mark-filter:brightness\(0\);--i:0"/);
+  assert.match(container.innerHTML, /style="--skill-accent:#61dafb;--skill-ink:#101820;--skill-mark-filter:brightness\(0\);--i:1"/);
+});
+
+test("skill watermarks adapt their hover contrast to light and dark card colors", async () => {
+  const { renderSkills } = await importSkillsModule();
+  const container = { innerHTML: "" };
+  const technologies = [
+    { name: "HTML", accent: "#e34f26", ink: "#fffaf2", logo: "html.svg", copy: "Markup", use: "Sites" },
+    { name: "JavaScript", accent: "#f7df1e", ink: "#17191b", logo: "javascript.svg", copy: "Logic", use: "Apps" }
+  ];
+
+  renderSkills(container, technologies);
+
+  assert.match(container.innerHTML, /--skill-mark-filter:brightness\(0\) invert\(1\)/);
+  assert.match(container.innerHTML, /--skill-mark-filter:brightness\(0\)/);
 });
 
 test("skill cards isolate animated content from the grid item", async () => {
