@@ -17,8 +17,8 @@ body::before {
   inset: 0;
   pointer-events: none;
   background:
-    radial-gradient(circle at 70% 10%, rgba(76, 201, 255, 0.14), transparent 28rem),
-    linear-gradient(180deg, rgba(255,255,255,0.035), transparent 18rem);
+    radial-gradient(circle at 70% 10%, rgba(7, 139, 204, 0.10), transparent 28rem),
+    linear-gradient(180deg, rgba(7, 139, 204, 0.035), transparent 18rem);
   z-index: -1;
 }
 
@@ -28,7 +28,7 @@ body::after {
   inset: 0;
   z-index: 1000;
   pointer-events: none;
-  opacity: .035;
+  opacity: .018;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E");
 }
 
@@ -84,8 +84,8 @@ p { color: var(--muted); font-size: clamp(1rem, 1.35vw, 1.16rem); }
 }
 .button svg { width: 18px; height: 18px; }
 .button:hover { transform: translateY(-2px); }
-.button--primary { color: #031016; background: var(--blue); box-shadow: 0 0 28px rgba(76,201,255,.2); }
-.button--ghost { border: 1px solid var(--line); background: rgba(255,255,255,.035); color: var(--text); }
+.button--primary { color: #fff; background: var(--blue); box-shadow: 0 10px 28px rgba(7,139,204,.2); }
+.button--ghost { border: 1px solid var(--line); background: rgba(7,139,204,.045); color: var(--text); }
 .button--ghost[aria-disabled="true"] { opacity: .55; cursor: not-allowed; }
 .button[data-whatsapp],
 .whatsapp-float {

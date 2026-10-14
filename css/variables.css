@@ -1,15 +1,15 @@
 :root {
-  --bg: #080a0c;
-  --bg-soft: #0b0d10;
-  --surface: #101316;
-  --surface-2: #151a1f;
-  --text: #f5f7fa;
-  --muted: #aab4bf;
-  --line: rgba(245, 247, 250, 0.12);
-  --blue: #4cc9ff;
-  --blue-strong: #38bdf8;
-  --blue-soft: rgba(76, 201, 255, 0.18);
-  --danger: #ff7a7a;
+  --bg: #ffffff;
+  --bg-soft: #f7fafc;
+  --surface: #ffffff;
+  --surface-2: #eef4f8;
+  --text: #101820;
+  --muted: #526170;
+  --line: rgba(16, 24, 32, 0.13);
+  --blue: #078bcc;
+  --blue-strong: #006fa8;
+  --blue-soft: rgba(7, 139, 204, 0.12);
+  --danger: #c73737;
   --radius: 8px;
   --container: min(1180px, calc(100% - 40px));
   --container-wide: min(1480px, calc(100% - 40px));
@@ -21,6 +21,6 @@
   --section-title-size: clamp(3rem, 7vw, 7.2rem);
   --panel-radius: clamp(1rem, 2vw, 1.75rem);
   --space-section: clamp(6rem, 13vw, 12rem);
-  --shadow-deep: 0 50px 140px rgba(0, 0, 0, .48);
+  --shadow-deep: 0 30px 90px rgba(24, 58, 78, .14);
   --header-pad: clamp(.85rem, 2vw, 1.4rem);
 }

@@ -37,6 +37,8 @@
   background: linear-gradient(100deg, rgba(8, 10, 12, .9), rgba(8, 10, 12, .56) 58%, rgba(8, 10, 12, .3));
 }
 .process-step > :not(.process-step__media):not(.process-step__overlay) { position: relative; z-index: 1; }
+.process-step { color: #f5f7fa; }
+.process-step p { color: rgba(245, 247, 250, .82); }
 .process__steps span { color: var(--blue); font-weight: 900; }
 .process__steps h3 { margin-top: .8rem; font-size: clamp(2.2rem, 5vw, 5rem); letter-spacing: -.055em; }
 .process__steps p { margin-top: 1rem; max-width: 560px; }

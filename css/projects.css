@@ -53,6 +53,8 @@
   position: relative;
   z-index: 2;
 }
+.project-panel { color: #f5f7fa; }
+.project-panel__content p:not(.eyebrow) { color: rgba(245, 247, 250, .82); }
 
 .project-panel:nth-child(2) { top: calc(var(--header-h) + 38px); }
 .project-panel:nth-child(3) { top: calc(var(--header-h) + 54px); }

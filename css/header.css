@@ -35,9 +35,9 @@
 .site-header.is-scrolled::after,
 .nav-open .site-header::after {
   border-color: var(--line);
-  background: rgba(8, 10, 12, 0.76);
+  background: rgba(255, 255, 255, 0.88);
   backdrop-filter: blur(22px);
-  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.24);
+  box-shadow: 0 14px 42px rgba(24, 58, 78, 0.12);
 }
 
 .brand {
@@ -51,6 +51,10 @@
   height: auto;
   object-fit: contain;
   filter: drop-shadow(0 0 14px rgba(76, 201, 255, 0.2));
+}
+.site-header .brand img,
+.legal-header .brand img {
+  filter: brightness(0) saturate(100%) invert(15%) sepia(18%) saturate(809%) hue-rotate(165deg) brightness(91%) contrast(94%);
 }
 .brand-initial,
 .brand-accent {
@@ -104,7 +108,7 @@
   overflow: hidden;
   padding: 0.72rem 1rem;
   border-radius: 999px;
-  color: #041016;
+  color: #fff;
   background: var(--blue);
   font-size: 0.82rem;
   font-weight: 800;

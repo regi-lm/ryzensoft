@@ -17,8 +17,8 @@
   padding: clamp(1.2rem, 2vw, 1.8rem);
   border: 1px solid var(--line);
   border-radius: var(--panel-radius);
-  background: linear-gradient(155deg, rgba(255,255,255,.065), rgba(255,255,255,.012));
-  box-shadow: 0 24px 70px rgba(0, 0, 0, .18);
+  background: linear-gradient(155deg, #ffffff, #f3f8fb);
+  box-shadow: 0 24px 70px rgba(24, 58, 78, .11);
   transition: border-color .65s var(--ease), box-shadow .65s var(--ease);
 }
 .skill-item::before {
@@ -28,7 +28,7 @@
   z-index: -2;
   background:
     radial-gradient(circle at 20% 12%, color-mix(in srgb, var(--skill-accent) 44%, transparent), transparent 52%),
-    linear-gradient(145deg, color-mix(in srgb, var(--skill-accent) 22%, #101316), rgba(8, 10, 12, .94) 72%);
+    linear-gradient(145deg, color-mix(in srgb, var(--skill-accent) 16%, #ffffff), rgba(247, 250, 252, .97) 72%);
   opacity: 0;
   transform: scale(.92);
   transition: opacity .65s var(--ease), transform .9s var(--ease-out);
@@ -60,8 +60,8 @@
   filter: grayscale(1) brightness(1.9);
 }
 .skill-item:last-child .skill-item__logo,
-.skill-item:last-child .skill-item__mark { filter: invert(1); }
-.skill-item:last-child:hover .skill-item__logo { filter: invert(1) drop-shadow(0 0 18px rgba(255, 255, 255, .65)); }
+.skill-item:last-child .skill-item__mark { filter: none; }
+.skill-item:last-child:hover .skill-item__logo { filter: drop-shadow(0 0 18px color-mix(in srgb, var(--skill-accent) 65%, transparent)); }
 .skill-item h3 { font-size: clamp(1.8rem, 3vw, 3.2rem); letter-spacing: -.05em; }
 .skill-item p { margin-top: 1rem; font-size: .98rem; }
 .skill-item span { display: inline-block; margin-top: 1rem; color: var(--blue); font-size: .9rem; }

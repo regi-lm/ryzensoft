@@ -49,6 +49,8 @@
   position: relative;
   z-index: 1;
 }
+.service-card { color: #f5f7fa; }
+.service-card p { color: rgba(245, 247, 250, .82); }
 
 .service-card:nth-child(2) { top: calc(var(--header-h) + 38px); }
 .service-card:nth-child(3) { top: calc(var(--header-h) + 54px); }

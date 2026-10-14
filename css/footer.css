@@ -50,4 +50,4 @@
   border-top: 1px solid var(--line);
   font-size: .86rem;
 }
-.site-footer > p { grid-column: 1 / -1; color: #76818c; text-align: center; }
+.site-footer > p { grid-column: 1 / -1; color: var(--muted); text-align: center; }

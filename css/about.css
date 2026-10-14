@@ -13,7 +13,7 @@
 }
 .about h2 { max-width: 1020px; }
 .about h2::first-line { color: var(--blue); }
-.about p { max-width: 760px; margin-top: clamp(1.5rem, 3vw, 2.6rem); color: rgba(245,247,250,.78); }
+.about p { max-width: 760px; margin-top: clamp(1.5rem, 3vw, 2.6rem); color: var(--muted); }
 .about__image {
   position: relative;
   overflow: hidden;

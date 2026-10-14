@@ -68,7 +68,7 @@
 .legal-document__lead {
   max-width: 780px;
   margin-top: 1.8rem;
-  color: rgba(245, 247, 250, .82);
+  color: var(--muted);
   font-size: clamp(1.08rem, 2vw, 1.3rem);
 }
 
