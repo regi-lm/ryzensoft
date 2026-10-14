@@ -1,9 +1,2 @@
-.worktrees/
-dist/
-.superpowers/
-.docs/
-.openai/
-.tests/
-.lgpd.html
-.politica-de-privacidade.html
-.termos.html
+# Testes
+tests/

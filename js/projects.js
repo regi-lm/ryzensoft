@@ -23,7 +23,7 @@ export const projects = [
     image: "assets/images/projects/cardapio-online.png",
     imageWidth: 1424,
     imageHeight: 764,
-    technologies: ["HTML", "CSS", "JavaScript", "Bootstrap", "Bibliotecas JS"],
+    technologies: ["HTML", "CSS", "JavaScript", "Bootstrap"],
     url: "https://cardapioonline-plum.vercel.app/",
     note: "Modelo demonstrativo"
   },
@@ -35,7 +35,7 @@ export const projects = [
     image: "assets/images/projects/advocacia.png",
     imageWidth: 1422,
     imageHeight: 648,
-    technologies: ["HTML", "CSS", "JavaScript", "Bibliotecas JS"],
+    technologies: ["HTML", "CSS", "JavaScript"],
     url: "https://margalhoadv.vercel.app/",
     note: "Modelo demonstrativo"
   }
