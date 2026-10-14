@@ -6,7 +6,7 @@
   flex-direction: column;
   justify-content: space-between;
   padding: clamp(1rem, 2.5vw, 2.5rem);
-  background: #ffffff;
+  background: #f5f0e8;
   transition: transform .7s var(--ease-out), opacity .45s var(--ease);
 }
 
@@ -57,7 +57,7 @@
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: linear-gradient(145deg, #ffffff 45%, #eef8fc);
+  background: linear-gradient(145deg, #fbf7f0 45%, #e7ded1);
   transform-origin: bottom;
   transition: transform .68s var(--ease-out);
 }

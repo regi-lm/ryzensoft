@@ -42,7 +42,7 @@
   flex-wrap: wrap;
   justify-content: flex-end;
   gap: 1rem;
-  color: var(--muted);
+  color: #34393e;
 }
 .site-footer__nav--legal {
   width: 100%;
@@ -50,4 +50,5 @@
   border-top: 1px solid var(--line);
   font-size: .86rem;
 }
-.site-footer > p { grid-column: 1 / -1; color: var(--muted); text-align: center; }
+.site-footer p { color: #34393e; }
+.site-footer > p { grid-column: 1 / -1; text-align: center; }

@@ -132,7 +132,7 @@
         rgba(76, 201, 255, 0.13),
         transparent 20rem
       ),
-      rgba(255, 255, 255, 0.99);
+      rgba(245, 240, 232, 0.99);
     transform: translateY(-1.5rem) scale(1.015);
     opacity: 0;
     visibility: hidden;
@@ -175,7 +175,7 @@
     background: linear-gradient(
       110deg,
       rgba(7, 139, 204, 0.055),
-      rgba(255, 255, 255, 0.92)
+      rgba(251, 247, 240, 0.92)
     );
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.72);
     font-size: 15px;
@@ -199,7 +199,7 @@
     background: linear-gradient(
       110deg,
       rgba(76, 201, 255, 0.11),
-      rgba(255, 255, 255, 0.82)
+      rgba(251, 247, 240, 0.84)
     );
     box-shadow:
       inset 0 1px 0 rgba(255, 255, 255, 0.7),

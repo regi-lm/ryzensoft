@@ -29,7 +29,7 @@ test("preloader keeps the RyzenSoft wordmark without displaying the logo", async
   assert.doesNotMatch(css, /\.preloader__brand-mark/);
 });
 
-test("technology marquee renders only duplicated blue icons", async () => {
+test("technology marquee renders only duplicated graphite icons", async () => {
   const { renderTechnologyMarquee } = await importSkillsModule();
   const container = { innerHTML: "" };
   const technologies = [
@@ -40,7 +40,7 @@ test("technology marquee renders only duplicated blue icons", async () => {
   renderTechnologyMarquee(container, technologies);
 
   assert.equal((container.innerHTML.match(/<img\b/g) ?? []).length, 4);
-  assert.equal((container.innerHTML.match(/#4cc9ff/g) ?? []).length, 4);
+  assert.equal((container.innerHTML.match(/#25282b/g) ?? []).length, 4);
   assert.doesNotMatch(container.innerHTML, />\s*(HTML|React)\s*</);
   assert.match(container.innerHTML, /aria-label="HTML"/);
   assert.match(container.innerHTML, /aria-label="React"/);
@@ -56,8 +56,8 @@ test("skill cards expose each technology accent color to the visual layer", asyn
 
   renderSkills(container, technologies);
 
-  assert.match(container.innerHTML, /style="--skill-accent:#e34f26;--i:0"/);
-  assert.match(container.innerHTML, /style="--skill-accent:#61dafb;--i:1"/);
+  assert.match(container.innerHTML, /style="--skill-accent:#e34f26;--skill-ink:#101820;--i:0"/);
+  assert.match(container.innerHTML, /style="--skill-accent:#61dafb;--skill-ink:#101820;--i:1"/);
 });
 
 test("skill cards isolate animated content from the grid item", async () => {

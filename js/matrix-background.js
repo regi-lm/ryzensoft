@@ -81,7 +81,7 @@ export function advanceColumn(column, {
   };
 }
 
-const MATRIX_COLORS = Object.freeze(["#1E90FF", "#00BFFF", "#38BDF8", "#7DD3FC", "#BAE6FD"]);
+const MATRIX_COLORS = Object.freeze(["#1B1D1F", "#25282B", "#303438", "#40454A", "#555B60"]);
 
 export function drawMatrixFrame(ctx, state) {
   ctx.clearRect(0, 0, state.width, state.height);
@@ -92,7 +92,7 @@ export function drawMatrixFrame(ctx, state) {
     if (column.respawnDelay > 0) return;
     const pointerBoost = getPointerInfluence(column, state.pointer);
     ctx.font = `600 ${column.fontSize}px ui-monospace, SFMono-Regular, Consolas, monospace`;
-    ctx.shadowColor = "#1E90FF";
+    ctx.shadowColor = "#25282B";
     ctx.shadowBlur = column.glow * pointerBoost;
 
     for (let trailIndex = 0; trailIndex < column.trailLength; trailIndex += 1) {
@@ -100,7 +100,7 @@ export function drawMatrixFrame(ctx, state) {
       const alpha = column.opacity * (1 - progress) * state.brightnessMultiplier * pointerBoost;
       const brightHead = trailIndex === 0 && columnIndex % 3 === 0;
       ctx.globalAlpha = Math.min(alpha * (brightHead ? 1.45 : 1), .82);
-      ctx.fillStyle = brightHead ? "#E0F7FF" : MATRIX_COLORS[(columnIndex + trailIndex) % MATRIX_COLORS.length];
+      ctx.fillStyle = brightHead ? "#111315" : MATRIX_COLORS[(columnIndex + trailIndex) % MATRIX_COLORS.length];
       ctx.fillText((column.glyphOffset + trailIndex + state.frameIndex) % 2 ? "1" : "0", column.x, column.y - trailIndex * column.fontSize);
     }
   });

@@ -1,10 +1,10 @@
 :root {
-  --bg: #ffffff;
-  --bg-soft: #f7fafc;
-  --surface: #ffffff;
-  --surface-2: #eef4f8;
+  --bg: #f5f0e8;
+  --bg-soft: #eee7dc;
+  --surface: #fbf7f0;
+  --surface-2: #e7ded1;
   --text: #101820;
-  --muted: #526170;
+  --muted: #3f454b;
   --line: rgba(16, 24, 32, 0.13);
   --blue: #078bcc;
   --blue-strong: #006fa8;

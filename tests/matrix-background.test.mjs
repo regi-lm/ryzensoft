@@ -181,7 +181,7 @@ test("renderer draws a bright head followed by a fading binary trail", async () 
   assert.ok(glyphs.every(([, glyph]) => glyph === "0" || glyph === "1"));
   assert.ok(trailAlphas.every((alpha) => alpha <= .82));
   assert.ok(trailAlphas.every((alpha, index) => index === 0 || alpha < trailAlphas[index - 1]));
-  assert.ok(calls.some(([name, color]) => name === "fillStyle" && color === "#E0F7FF"));
+  assert.ok(calls.some(([name, color]) => name === "fillStyle" && color === "#111315"));
 });
 
 test("animated mode owns one loop and cleanup removes every listener", async () => {

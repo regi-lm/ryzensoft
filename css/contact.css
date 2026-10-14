@@ -16,7 +16,7 @@
   padding: clamp(1.3rem, 4vw, 3rem);
   border: 1px solid var(--line);
   border-radius: var(--panel-radius);
-  background: linear-gradient(155deg, #ffffff, var(--bg-soft));
+  background: linear-gradient(155deg, #fbf7f0, var(--bg-soft));
   box-shadow: var(--shadow-deep);
 }
 .contact-form div { display: grid; gap: .45rem; }
@@ -27,7 +27,7 @@
   border-radius: .85rem;
   padding: 1rem 1.05rem;
   color: var(--text);
-  background: #ffffff;
+  background: #fbf7f0;
 }
 .contact-form textarea { resize: vertical; }
 .contact-form small { min-height: 1.15rem; color: var(--danger); }

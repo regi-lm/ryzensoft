@@ -52,7 +52,7 @@
   width: min(100%, 980px);
   margin-top: clamp(2.5rem, 5vw, 4.5rem);
   overflow: hidden;
-  border-block: 1px solid rgba(76, 201, 255, .18);
+  border-block: 1px solid rgba(37, 40, 43, .18);
   background: transparent;
   -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
   mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
